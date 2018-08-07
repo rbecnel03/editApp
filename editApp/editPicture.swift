@@ -61,11 +61,11 @@ class editPicture: UIViewController, UIImagePickerControllerDelegate, UINavigati
                 }
             }
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-            
+
             navigationController?.popViewController(animated: true)
             }
         
-   
+    }
     
         
     
@@ -74,11 +74,11 @@ class editPicture: UIViewController, UIImagePickerControllerDelegate, UINavigati
            newImageView.image = selectedImage
             
         }
-       // dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     
-}
+
 
 }
 

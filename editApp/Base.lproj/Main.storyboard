@@ -174,6 +174,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zna-qp-FfK"/>
+                    <connections>
+                        <segue destination="IzO-kd-jtv" kind="show" identifier="toEnlargePhoto" id="ErM-aR-gfA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6m-il-jrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,18 +191,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background3" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-l5-HHP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Kt-X5-JbJ">
-                                <rect key="frame" x="31" y="45" width="310" height="601"/>
+                                <rect key="frame" x="31" y="89" width="310" height="557"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q82-7n-wTG">
-                                    <rect key="frame" x="0.0" y="0.0" width="310" height="601"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="557"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQv-Fm-sGa">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="601"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="557"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6e8-Ba-8el">
-                                                <rect key="frame" x="0.0" y="0.0" width="310" height="601"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="310" height="557"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-De-37V">
@@ -307,7 +310,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="save:" destination="f2i-BC-PVm" eventType="touchUpInside" id="qzB-GH-Ejk"/>
-                                                            <segue destination="Yh2-rP-yNT" kind="show" id="Vjc-wY-f5L"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -392,18 +394,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y8-wa-NOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058.4000000000001" y="134.48275862068968"/>
+            <point key="canvasLocation" x="3169" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--Enlargephoto View Controller-->
         <scene sceneID="6R8-SU-ZYo">
             <objects>
-                <viewController id="IzO-kd-jtv" sceneMemberID="viewController">
+                <viewController id="IzO-kd-jtv" customClass="EnlargephotoViewController" customModule="editApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lvs-g1-sKX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gk2-2T-hgi">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="21"/>
                                     <color key="textColor" red="0.71372549019999998" green="0.54901960780000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -418,6 +420,34 @@
                                     <constraint firstAttribute="height" constant="560" id="pkt-nl-937"/>
                                 </constraints>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-bm-q9P">
+                                <rect key="frame" x="16" y="87" width="343" height="560"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Obi-ts-Jk9">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="560"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgI-2U-SfO">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="560"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="EHs-gh-vJh">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="560"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSB-zI-vHa">
+                                                        <rect key="frame" x="20" y="22" width="302" height="517"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -430,10 +460,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YKL-1H-0EO"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundPhoto" destination="uk4-wS-a7O" id="TYX-Pw-F5A"/>
+                        <outlet property="enlargedPhoto" destination="zSB-zI-vHa" id="fDT-7G-Cd3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIh-uQ-Odo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8000000000002" y="135.38230884557723"/>
+            <point key="canvasLocation" x="2350" y="-511"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FIV-IU-T9e">
@@ -458,7 +492,4 @@
         <image name="background" width="529" height="800"/>
         <image name="background3" width="2560" height="1600"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Vjc-wY-f5L"/>
-    </inferredMetricsTieBreakers>
 </document>

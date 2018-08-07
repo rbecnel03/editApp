@@ -48,10 +48,7 @@ class photoLibraryTableViewController: UITableViewController {
 ////    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 ////
 //    }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -59,21 +56,37 @@ class photoLibraryTableViewController: UITableViewController {
         let cellPhoto = photos[indexPath.row]
         
         cell.textLabel?.text = cellPhoto.caption
+
+
         
         if let cellPhotoImageData = cellPhoto.imageData {
             if let cellPhotoImage = UIImage(data: cellPhotoImageData) {
                 cell.imageView?.image = cellPhotoImage
             }
+            
         }
-        
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return photos.count
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toEnlargePhoto", sender: [photos[indexPath.row]])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEnlargePhoto" {
+            if let photoDetailView = segue.destination as? EnlargephotoViewController {
+                
+                if let photoToSend = sender as? Photo {
+//                    photoDetailView.photo = photoToSend
+                }
+                }
+        }
+        
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -82,6 +95,7 @@ class photoLibraryTableViewController: UITableViewController {
 
         return cell
     }
+    
 //    */
 //
 //    /*

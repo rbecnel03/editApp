@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DED26D122119EB90002EC7C7 /* EnlargephotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26D112119EB90002EC7C7 /* EnlargephotoViewController.swift */; };
 		DEE6915B2114B89A0078E8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6915A2114B89A0078E8EB /* AppDelegate.swift */; };
 		DEE6915D2114B89A0078E8EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6915C2114B89A0078E8EB /* ViewController.swift */; };
 		DEE691602114B89A0078E8EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE6915E2114B89A0078E8EB /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DED26D112119EB90002EC7C7 /* EnlargephotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargephotoViewController.swift; sourceTree = "<group>"; };
 		DEE691572114B89A0078E8EB /* editApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = editApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE6915A2114B89A0078E8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEE6915C2114B89A0078E8EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				DEE691752114EAE90078E8EB /* photoLibraryTableViewController.swift */,
 				DEE6915C2114B89A0078E8EB /* ViewController.swift */,
 				DEE6915E2114B89A0078E8EB /* Main.storyboard */,
+				DED26D112119EB90002EC7C7 /* EnlargephotoViewController.swift */,
 				DEE691732114DB8C0078E8EB /* editPicture.swift */,
 				DEE691642114B89A0078E8EB /* Assets.xcassets */,
 				DEE691662114B89A0078E8EB /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED26D122119EB90002EC7C7 /* EnlargephotoViewController.swift in Sources */,
 				DEE691762114EAE90078E8EB /* photoLibraryTableViewController.swift in Sources */,
 				DEE6915D2114B89A0078E8EB /* ViewController.swift in Sources */,
 				DEE6915B2114B89A0078E8EB /* AppDelegate.swift in Sources */,
