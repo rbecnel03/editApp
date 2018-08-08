@@ -9,30 +9,36 @@
 import UIKit
 
 class EnlargephotoViewController: UIViewController {
-
-    @IBOutlet weak var backgroundPhoto: UIImageView!
-    @IBOutlet weak var enlargedPhoto: UIImageView!
-    var photo : Photo?
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    @IBOutlet weak var enlargeImage: UIImageView!
+    
+    @IBOutlet weak var locationTitle: UILabel!
+    
+    @IBOutlet weak var dateTitle: UILabel!
+    
+    var photos : Photo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let realPhoto = photo{
+        print("ashdasdhaskdjhsakjdh")
+//        print(photos!)
+        if let realPhoto = photos  {
+            print("ashdasdhaskdjhsakjdh")
             title = realPhoto.caption
-        
+            locationTitle.text = realPhoto.location
+            dateTitle.text = realPhoto.date
+            
             if let cellPhotoImageData = realPhoto.imageData {
-                if let cellPhotoImage = UIImage(data: cellPhotoImageData)
-                {
-                    backgroundPhoto.image = cellPhotoImage
-                    enlargedPhoto.image = cellPhotoImage
+                if let cellPhotoImage = UIImage(data: cellPhotoImageData) {
+                    backgroundImage.image = cellPhotoImage
+                    enlargeImage.image = cellPhotoImage
                 }
             }
-            }
         }
-
-        // Do any additional setup after loading the view.
     }
 
-    
-
+}
 
 

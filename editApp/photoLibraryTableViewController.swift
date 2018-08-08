@@ -16,7 +16,6 @@ class photoLibraryTableViewController: UITableViewController {
     var data = [CellData]()
     var photos : [Photo] = []
     
-    
     func getPhotos() {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
@@ -35,10 +34,17 @@ class photoLibraryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
-
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let context  = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let photoToDelete = photos[indexPath.row]
+                context.delete(photoToDelete)
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                getPhotos()
+            }
+        }
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -46,8 +52,6 @@ class photoLibraryTableViewController: UITableViewController {
         let cellPhoto = photos[indexPath.row]
         
         cell.textLabel?.text = cellPhoto.caption
-
-
         
         if let cellPhotoImageData = cellPhoto.imageData {
             if let cellPhotoImage = UIImage(data: cellPhotoImageData) {
@@ -63,17 +67,22 @@ class photoLibraryTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return photos.count
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toEnlargePhoto", sender: [photos[indexPath.row]])
+        performSegue(withIdentifier: "toEnlargePhoto", sender: photos[indexPath.row])
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toEnlargePhoto" {
+            
             if let photoDetailView = segue.destination as? EnlargephotoViewController {
-                
+                print(sender!, ":::::::::")
                 if let photoToSend = sender as? Photo {
-                    photoDetailView.photo = photoToSend
+                    // this is what we are not getting into
+                    photoDetailView.photos = photoToSend
                 }
-                }
+            }
         }
         
     }
